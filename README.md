@@ -53,15 +53,19 @@ Modern vehicles and IoV systems face increasing threats from cyber-attacks due t
 
 ```
 .
-├── artifacts/                    ← Trained model weights and artifacts
-├── data/                         ← Preprocessed chunk files and sample CSVs
-├── demo_models/                         ← Dummy models for demonstration purpose
+├── artifacts/                                    ← Trained model weights and artifacts
+├── data/                                         ← Preprocessed chunk files and sample CSVs
+├── demo_models/                                  ← Dummy models for demonstration purpose
+├── base/                                         ← Base Notebooks from original paper - Converted to PyTorch
 ├── experiments/
-│   ├── 1-Data-Preprocessing.ipynb       # Tabular to image & raw CAN chunk conversion
-│   ├── 2-CNN_Model_Development.ipynb    # Image-based CNN/ViT training and evaluation
-│   ├── 2-Raw-Chunk-CNN-Training.ipynb   # Raw-based 1D/2D CNN, LSTM, Transformer training
-│   ├── 3-Ensemble_Models-CAN.ipynb      # Ensemble model fusion (bagging, averaging, concat)
-│   └── 3-Model_Comparison.ipynb         # Charts and radar plots for final benchmarking
+│   ├── 1 - Data_pre_processing_CAN.ipynb         # Tabular to image conversion
+│   ├── 2 - CNN_ViT_Model_Training.ipynb          # Image-based CNN/ViT training and evaluation
+│   ├── 2 - DEMO_CNN_ViT_Model_Training.ipynb     # Demo model training (VGG16, VGG19, InceptionV3, etc.)
+│   ├── 3- CNN_ViT_Model_Testing.ipynb            # Ensemble model fusion (bagging, averaging, concat)
+│   ├── 4 - Preprocess_Raw_Chunk.ipynb            # Tabular to raw CAN chunk conversion
+│   ├── 5 - Train_Test_Raw_CNN.ipynb              # Raw-based 1D/2D CNN, LSTM, Transformer training
+│   ├── 6 - Model_Evaluation.ipynb                # Charts and radar plots for final benchmarking
+│   └── 7 - Edge_Benchmarking.ipynb               # Benhmarking and deployment preparation for Jetson Orin Nano
 ├── requirements.txt
 └── README.md
 ```
@@ -77,9 +81,17 @@ Modern vehicles and IoV systems face increasing threats from cyber-attacks due t
 | LSTM  | Raw   | 99.2%    | 0.992    | 3.4                 | 2.8M   | 10.7      |
 | VGG16 | Image | 99.7%    | 0.996    | 10.5                | 134M   | 510       |
 
-📈 See `3-Model_Comparison.ipynb` for grouped bar plots and radar chart comparisons.
+📈 See `6 - Model_Evaluation.ipynb ` for grouped bar plots and radar chart comparisons.
 
-## 📦 Requirements
+## 📦 Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/SakifKhan98/iov-intrusion-detection-system.git
+```
+
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -108,3 +120,12 @@ If you use this repo or build upon it, please cite the original work:
   doi={10.1109/ICC45855.2022.9838780}
 }
 ```
+
+## Future Work
+
+- Explore additional models (e.g., EfficientNet, MobileNet) for better performance and efficiency
+- Investigate the impact of different data augmentation techniques on model performance
+- Explore more datasets like [CICIDS](https://www.unb.ca/cic/datasets/), [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset), [TON_IoT](https://research.unsw.edu.au/projects/toniot-datasets), etc for broader evaluation
+- Investigate adversarial attacks and defenses in the context of IoV intrusion detection
+- Implement real-time monitoring and alerting systems for IoV networks
+- Extend the dataset to include more diverse attack scenarios and vehicle types
