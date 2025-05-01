@@ -1,0 +1,8 @@
+ids
+test
+test_224
+train
+train_224
+*.py
+demo_models
+artifacts

@@ -1,0 +1,8 @@
+Model,Type,Accuracy,F1 Score,Inference Time (ms),#Params,Size (MB)
+VGG16,Image,0.9675,0.9524,4.951,21138757,80.64
+VGG19,Image,0.8987,0.8776,5.986,26448453,100.89
+Xception,Image,1.0,1.0,4.665,20817197,79.41
+InceptionV3,Image,1.0,1.0,11.672,22311397,85.11
+InceptionResNetV2,Image,1.0,1.0,29.681,54314149,207.19
+ResNet50,Image,1.0,1.0,5.145,24033861,91.68
+ViT,Image,1.0,1.0,8.743,85802501,327.31

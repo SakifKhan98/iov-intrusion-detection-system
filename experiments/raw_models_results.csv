@@ -1,0 +1,5 @@
+Model,Type,Accuracy,F1 Score,Inference Time (ms),#Params,Size (MB)
+CNN1D,Raw,1.0,1.0,0.53,7621,0.03
+CNN2D,Raw,1.0,1.0,0.31,4965,0.02
+LSTM,Raw,1.0,1.0,0.305,138373,0.53
+Transformer,Raw,1.0,1.0,1.451,150917,0.58
